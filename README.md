@@ -1,13 +1,15 @@
-# Computer-Organization-and-Architecture-LAB
+# Computer Organization and Architecture
 
-Solution to COA LAB Assgn. for MIPS processor 
+### Assignments
+* Assignment-1: MIPS Programming
+* Assignment-2: MIPS-32 Programming
+* Assignment-3: Combinational Circuit Design in Verilog for FPGA Platform
+* Assignment-4: Adder Design on FPGA
+* Assignment-5: Multiplier Design on FPGA
+* Assignment-6: FSM Design using Verilog
+* Assignment-7: Verilog Design of a Single-cycle RISC ISA
 
-## Assignment 1 ##
+### Author
+[Vedic Partap](http://cse.iitkgp.ac.in/~vedicp/) 
 
-### Prob1 ###
-
-Find the Sum of the digit of number. Sanity check if the number is positive. 
-
-### Prob2 ###
-
-Find the nth Fibonnaci Number. Do the same sanity check. 
+For any queries contact me at <vedicpartap1999@gmail.com>
