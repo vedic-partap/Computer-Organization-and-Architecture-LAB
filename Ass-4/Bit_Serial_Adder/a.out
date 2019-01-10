@@ -1,0 +1,244 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1c7a2f0 .scope module, "bitSerialAdder_tb" "bitSerialAdder_tb" 2 4;
+ .timescale -9 -12;
+v0x1c966f0_0 .var "a", 7 0;
+v0x1c967c0_0 .var "b", 7 0;
+v0x1c96890_0 .var "cin", 0 0;
+v0x1c96960_0 .var "clk", 0 0;
+v0x1c969e0_0 .net "cout", 0 0, L_0x1c96dd0; 1 drivers
+v0x1c96a60_0 .var "load", 0 0;
+v0x1c96ae0_0 .var "rst_ff", 0 0;
+v0x1c96bb0_0 .var "rst_shift", 0 0;
+v0x1c96c80_0 .var "sipo_load", 0 0;
+v0x1c96d50_0 .net "sum", 7 0, v0x1c94550_0; 1 drivers
+S_0x1c7a3e0 .scope module, "uut" "bitSerialAdder" 2 21, 3 8, S_0x1c7a2f0;
+ .timescale -9 -12;
+v0x1c95ca0_0 .net "a", 7 0, v0x1c966f0_0; 1 drivers
+v0x1c95d50_0 .net "b", 7 0, v0x1c967c0_0; 1 drivers
+v0x1c95e00_0 .net "c", 0 0, v0x1c95370_0; 1 drivers
+v0x1c95ed0_0 .net "cin", 0 0, v0x1c96890_0; 1 drivers
+v0x1c95f80_0 .net "clk", 0 0, v0x1c96960_0; 1 drivers
+v0x1c96090_0 .alias "cout", 0 0, v0x1c969e0_0;
+v0x1c96110_0 .net "load", 0 0, v0x1c96a60_0; 1 drivers
+v0x1c961e0_0 .net "rst_ff", 0 0, v0x1c96ae0_0; 1 drivers
+v0x1c962b0_0 .net "rst_shift", 0 0, v0x1c96bb0_0; 1 drivers
+v0x1c96380_0 .net "s", 0 0, L_0x1c96f00; 1 drivers
+v0x1c96400_0 .net "sipo_load", 0 0, v0x1c96c80_0; 1 drivers
+v0x1c96480_0 .alias "sum", 7 0, v0x1c96d50_0;
+v0x1c96570_0 .net "x", 7 0, v0x1c95b40_0; 1 drivers
+v0x1c965f0_0 .net "z", 7 0, v0x1c95740_0; 1 drivers
+L_0x1c97610 .part v0x1c95b40_0, 0, 1;
+L_0x1c97750 .part v0x1c95740_0, 0, 1;
+S_0x1c95860 .scope module, "INST1" "ShiftReg" 3 24, 4 4, S_0x1c7a3e0;
+ .timescale -9 -12;
+v0x1c95950_0 .alias "clk", 0 0, v0x1c95f80_0;
+v0x1c959f0_0 .alias "in", 7 0, v0x1c95ca0_0;
+v0x1c95a90_0 .alias "load", 0 0, v0x1c96110_0;
+v0x1c95b40_0 .var "out", 7 0;
+v0x1c95bf0_0 .alias "rst", 0 0, v0x1c962b0_0;
+S_0x1c954d0 .scope module, "INST2" "ShiftReg" 3 25, 4 4, S_0x1c7a3e0;
+ .timescale -9 -12;
+v0x1c955c0_0 .alias "clk", 0 0, v0x1c95f80_0;
+v0x1c95640_0 .alias "in", 7 0, v0x1c95d50_0;
+v0x1c956c0_0 .alias "load", 0 0, v0x1c96110_0;
+v0x1c95740_0 .var "out", 7 0;
+v0x1c957c0_0 .alias "rst", 0 0, v0x1c962b0_0;
+S_0x1c95080 .scope module, "D" "dff" 3 27, 5 4, S_0x1c7a3e0;
+ .timescale -9 -12;
+v0x1c95170_0 .alias "cin", 0 0, v0x1c95ed0_0;
+v0x1c95210_0 .alias "clk", 0 0, v0x1c95f80_0;
+v0x1c952c0_0 .alias "d", 0 0, v0x1c969e0_0;
+v0x1c95370_0 .var "q", 0 0;
+v0x1c95450_0 .alias "rst", 0 0, v0x1c961e0_0;
+S_0x1c94600 .scope module, "FA1" "Adder" 3 30, 6 4, S_0x1c7a3e0;
+ .timescale -9 -12;
+v0x1c946f0_0 .net *"_s10", 0 0, C4<0>; 1 drivers
+v0x1c947b0_0 .net *"_s11", 1 0, L_0x1c971c0; 1 drivers
+v0x1c94850_0 .net *"_s13", 1 0, L_0x1c97360; 1 drivers
+v0x1c948f0_0 .net *"_s16", 0 0, C4<0>; 1 drivers
+v0x1c949a0_0 .net *"_s17", 1 0, L_0x1c974d0; 1 drivers
+v0x1c94a40_0 .net *"_s3", 1 0, L_0x1c96fa0; 1 drivers
+v0x1c94b20_0 .net *"_s6", 0 0, C4<0>; 1 drivers
+v0x1c94bc0_0 .net *"_s7", 1 0, L_0x1c97090; 1 drivers
+v0x1c94cb0_0 .net "a", 0 0, L_0x1c97610; 1 drivers
+v0x1c94d50_0 .net "b", 0 0, L_0x1c97750; 1 drivers
+v0x1c94e50_0 .alias "cin", 0 0, v0x1c95e00_0;
+v0x1c94ef0_0 .alias "cout", 0 0, v0x1c969e0_0;
+v0x1c95000_0 .alias "sum", 0 0, v0x1c96380_0;
+L_0x1c96dd0 .part L_0x1c974d0, 1, 1;
+L_0x1c96f00 .part L_0x1c974d0, 0, 1;
+L_0x1c96fa0 .concat [ 1 1 0 0], L_0x1c97610, C4<0>;
+L_0x1c97090 .concat [ 1 1 0 0], L_0x1c97750, C4<0>;
+L_0x1c971c0 .arith/sum 2, L_0x1c96fa0, L_0x1c97090;
+L_0x1c97360 .concat [ 1 1 0 0], v0x1c95370_0, C4<0>;
+L_0x1c974d0 .arith/sum 2, L_0x1c971c0, L_0x1c97360;
+S_0x1c77410 .scope module, "S1" "sipo" 3 33, 7 4, S_0x1c7a3e0;
+ .timescale -9 -12;
+v0x1c7de90_0 .alias "clk", 0 0, v0x1c95f80_0;
+v0x1c94410_0 .alias "in", 0 0, v0x1c96380_0;
+v0x1c944b0_0 .alias "load", 0 0, v0x1c96400_0;
+v0x1c94550_0 .var "out", 7 0;
+E_0x1c659a0 .event posedge, v0x1c7de90_0;
+    .scope S_0x1c95860;
+T_0 ;
+    %wait E_0x1c659a0;
+    %load/v 8, v0x1c95a90_0, 1;
+    %mov 9, 0, 1;
+    %cmpi/u 8, 0, 2;
+    %mov 8, 4, 1;
+    %load/v 9, v0x1c95bf0_0, 1;
+    %mov 10, 0, 1;
+    %cmpi/u 9, 0, 2;
+    %mov 9, 4, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_0.0, 8;
+    %load/v 8, v0x1c95b40_0, 8;
+    %ix/load 0, 1, 0;
+    %mov 4, 0, 1;
+    %shiftr/i0  8, 8;
+    %set/v v0x1c95b40_0, 8, 8;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/v 8, v0x1c95a90_0, 1;
+    %mov 9, 0, 2;
+    %cmpi/u 8, 1, 3;
+    %mov 8, 4, 1;
+    %load/v 9, v0x1c95bf0_0, 1;
+    %mov 10, 0, 1;
+    %cmpi/u 9, 0, 2;
+    %mov 9, 4, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_0.2, 8;
+    %load/v 8, v0x1c959f0_0, 8;
+    %set/v v0x1c95b40_0, 8, 8;
+    %jmp T_0.3;
+T_0.2 ;
+    %set/v v0x1c95b40_0, 0, 8;
+T_0.3 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x1c954d0;
+T_1 ;
+    %wait E_0x1c659a0;
+    %load/v 8, v0x1c956c0_0, 1;
+    %mov 9, 0, 1;
+    %cmpi/u 8, 0, 2;
+    %mov 8, 4, 1;
+    %load/v 9, v0x1c957c0_0, 1;
+    %mov 10, 0, 1;
+    %cmpi/u 9, 0, 2;
+    %mov 9, 4, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_1.0, 8;
+    %load/v 8, v0x1c95740_0, 8;
+    %ix/load 0, 1, 0;
+    %mov 4, 0, 1;
+    %shiftr/i0  8, 8;
+    %set/v v0x1c95740_0, 8, 8;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/v 8, v0x1c956c0_0, 1;
+    %mov 9, 0, 2;
+    %cmpi/u 8, 1, 3;
+    %mov 8, 4, 1;
+    %load/v 9, v0x1c957c0_0, 1;
+    %mov 10, 0, 1;
+    %cmpi/u 9, 0, 2;
+    %mov 9, 4, 1;
+    %and 8, 9, 1;
+    %jmp/0xz  T_1.2, 8;
+    %load/v 8, v0x1c95640_0, 8;
+    %set/v v0x1c95740_0, 8, 8;
+    %jmp T_1.3;
+T_1.2 ;
+    %set/v v0x1c95740_0, 0, 8;
+T_1.3 ;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x1c95080;
+T_2 ;
+    %wait E_0x1c659a0;
+    %load/v 8, v0x1c95450_0, 1;
+    %mov 9, 0, 1;
+    %cmpi/u 8, 0, 2;
+    %jmp/0xz  T_2.0, 4;
+    %load/v 8, v0x1c952c0_0, 1;
+    %set/v v0x1c95370_0, 8, 1;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/v 8, v0x1c95170_0, 1;
+    %set/v v0x1c95370_0, 8, 1;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x1c77410;
+T_3 ;
+    %wait E_0x1c659a0;
+    %load/v 8, v0x1c944b0_0, 1;
+    %mov 9, 0, 1;
+    %cmpi/u 8, 0, 2;
+    %jmp/0xz  T_3.0, 4;
+    %ix/load 1, 1, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_3.2, 4;
+    %load/x1p 16, v0x1c94550_0, 7;
+    %jmp T_3.3;
+T_3.2 ;
+    %mov 16, 2, 7;
+T_3.3 ;
+    %mov 8, 16, 7; Move signal select into place
+    %load/v 15, v0x1c94410_0, 1;
+    %set/v v0x1c94550_0, 8, 8;
+T_3.0 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0x1c7a2f0;
+T_4 ;
+    %set/v v0x1c96960_0, 0, 1;
+    %set/v v0x1c96bb0_0, 0, 1;
+    %set/v v0x1c96ae0_0, 1, 1;
+    %set/v v0x1c96a60_0, 1, 1;
+    %set/v v0x1c96c80_0, 0, 1;
+    %movi 8, 105, 8;
+    %set/v v0x1c966f0_0, 8, 8;
+    %movi 8, 52, 8;
+    %set/v v0x1c967c0_0, 8, 8;
+    %set/v v0x1c96890_0, 0, 1;
+    %delay 50000, 0;
+    %set/v v0x1c96ae0_0, 0, 1;
+    %delay 400000, 0;
+    %set/v v0x1c96a60_0, 0, 1;
+    %end;
+    .thread T_4;
+    .scope S_0x1c7a2f0;
+T_5 ;
+    %delay 25000, 0;
+    %load/v 8, v0x1c96960_0, 1;
+    %inv 8, 1;
+    %set/v v0x1c96960_0, 8, 1;
+    %jmp T_5;
+    .thread T_5;
+    .scope S_0x1c7a2f0;
+T_6 ;
+    %delay 850000, 0;
+    %set/v v0x1c96c80_0, 1, 1;
+    %vpi_call 2 59 "$display", "%d, %d, %d", v0x1c966f0_0, v0x1c967c0_0, v0x1c96d50_0;
+    %end;
+    .thread T_6;
+# The file index is used to find the file name in the following table.
+:file_names 8;
+    "N/A";
+    "<interactive>";
+    "bitSerialAdder_test_bench.v";
+    "bitSerialAdder.v";
+    "./ShiftReg.v";
+    "./dff.v";
+    "./Adder.v";
+    "./sipo.v";

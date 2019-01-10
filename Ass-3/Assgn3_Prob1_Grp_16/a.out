@@ -1,0 +1,207 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x237ca50 .scope module, "sign_mag_adder_tb" "sign_mag_adder_tb" 2 25;
+ .timescale -9 -12;
+v0x23ad790_0 .var "a", 7 0;
+v0x23ad960_0 .var "b", 7 0;
+RS_0x7fa27dcb8558 .resolv tri, L_0x23ae8b0, L_0x23ae9f0, L_0x23aec50, C4<zzzzzzzzz>;
+v0x23ad9e0_0 .net8 "sum", 8 0, RS_0x7fa27dcb8558; 3 drivers
+S_0x237c840 .scope module, "uut" "sign_mag_adder" 2 35, 3 10, S_0x237ca50;
+ .timescale -9 -12;
+L_0x23ab4d0 .functor XOR 1, L_0x23ada60, L_0x23adb50, C4<0>, C4<0>;
+L_0x23ade70 .functor AND 1, v0x23ac970_0, L_0x23ab4d0, C4<1>, C4<1>;
+L_0x23adf20 .functor NOT 1, L_0x23ab4d0, C4<0>, C4<0>, C4<0>;
+L_0x23ae010 .functor NOT 7, v0x23ac610_0, C4<0000000>, C4<0000000>, C4<0000000>;
+v0x23aca10_0 .net *"_s20", 0 0, C4<0>; 1 drivers
+v0x23acad0_0 .net *"_s22", 0 0, L_0x23aeb10; 1 drivers
+v0x23acb70_0 .net *"_s26", 0 0, L_0x23aed80; 1 drivers
+v0x23acc10_0 .net "a", 7 0, v0x23ad790_0; 1 drivers
+v0x23accc0_0 .net "abxor", 0 0, L_0x23ab4d0; 1 drivers
+v0x23acd70_0 .net "b", 7 0, v0x23ad960_0; 1 drivers
+v0x23acdf0_0 .net "c_out", 0 0, L_0x23ae0c0; 1 drivers
+v0x23ace70_0 .net "compare", 0 0, v0x23ac970_0; 1 drivers
+v0x23acf70_0 .net "mag_a", 6 0, L_0x23adc40; 1 drivers
+v0x23ad080_0 .net "mag_b", 6 0, L_0x23adce0; 1 drivers
+v0x23ad190_0 .net "outmux", 6 0, v0x23ac610_0; 1 drivers
+v0x23ad240_0 .net "outmux1", 6 0, L_0x23ae010; 1 drivers
+v0x23ad360_0 .net "outmux2", 6 0, v0x23ac240_0; 1 drivers
+v0x23ad3e0_0 .net "outmux3", 6 0, v0x23abe30_0; 1 drivers
+v0x23ad4e0_0 .net "outmux4", 6 0, v0x23aba30_0; 1 drivers
+v0x23ad560_0 .net "sel1", 0 0, L_0x23ade70; 1 drivers
+v0x23ad460_0 .net "sel2", 0 0, L_0x23adf20; 1 drivers
+v0x23ad710_0 .net "sign_a", 0 0, L_0x23ada60; 1 drivers
+v0x23ad5e0_0 .net "sign_b", 0 0, L_0x23adb50; 1 drivers
+v0x23ad830_0 .alias "sum", 8 0, v0x23ad9e0_0;
+L_0x23ada60 .part v0x23ad790_0, 7, 1;
+L_0x23adb50 .part v0x23ad960_0, 7, 1;
+L_0x23adc40 .part v0x23ad790_0, 0, 7;
+L_0x23adce0 .part v0x23ad960_0, 0, 7;
+L_0x23ae8b0 .part/pv L_0x23ae1b0, 0, 7, 9;
+L_0x23ae9f0 .part/pv L_0x23aeb10, 7, 1, 9;
+L_0x23aeb10 .functor MUXZ 1, L_0x23ae0c0, C4<0>, L_0x23ab4d0, C4<>;
+L_0x23aec50 .part/pv L_0x23aed80, 8, 1, 9;
+L_0x23aed80 .functor MUXZ 1, L_0x23ada60, L_0x23adb50, v0x23ac970_0, C4<>;
+S_0x23ac730 .scope module, "inst1" "comparator" 3 25, 4 3, S_0x237c840;
+ .timescale -9 -12;
+v0x23ac850_0 .alias "a", 6 0, v0x23acf70_0;
+v0x23ac8f0_0 .alias "b", 6 0, v0x23ad080_0;
+v0x23ac970_0 .var "out", 0 0;
+E_0x23ac820 .event edge, v0x23abd90_0, v0x23ab990_0;
+S_0x23ac3a0 .scope module, "INST1" "mux" 3 32, 5 4, S_0x237c840;
+ .timescale -9 -12;
+v0x23ac4c0_0 .alias "a", 6 0, v0x23ad080_0;
+v0x23ac540_0 .alias "b", 6 0, v0x23acf70_0;
+v0x23ac610_0 .var "out", 6 0;
+v0x23ac6b0_0 .alias "select", 0 0, v0x23ad560_0;
+E_0x23ac490 .event edge, v0x23ac2f0_0, v0x23ab990_0, v0x23abd90_0;
+S_0x23abfc0 .scope module, "INST2" "mux" 3 34, 5 4, S_0x237c840;
+ .timescale -9 -12;
+v0x23ac0e0_0 .alias "a", 6 0, v0x23acf70_0;
+v0x23ac190_0 .alias "b", 6 0, v0x23ad080_0;
+v0x23ac240_0 .var "out", 6 0;
+v0x23ac2f0_0 .alias "select", 0 0, v0x23ad560_0;
+E_0x23ac0b0 .event edge, v0x23ac2f0_0, v0x23abd90_0, v0x23ab990_0;
+S_0x23abb90 .scope module, "INST3" "mux" 3 35, 5 4, S_0x237c840;
+ .timescale -9 -12;
+v0x23abcd0_0 .alias "a", 6 0, v0x23ad240_0;
+v0x23abd90_0 .alias "b", 6 0, v0x23acf70_0;
+v0x23abe30_0 .var "out", 6 0;
+v0x23abee0_0 .alias "select", 0 0, v0x23ad460_0;
+E_0x23abc80 .event edge, v0x23abae0_0, v0x23abcd0_0, v0x23abd90_0;
+S_0x23ab7a0 .scope module, "INST4" "mux" 3 36, 5 4, S_0x237c840;
+ .timescale -9 -12;
+v0x23ab8d0_0 .alias "a", 6 0, v0x23ad360_0;
+v0x23ab990_0 .alias "b", 6 0, v0x23ad080_0;
+v0x23aba30_0 .var "out", 6 0;
+v0x23abae0_0 .alias "select", 0 0, v0x23ad460_0;
+E_0x23ab070 .event edge, v0x23abae0_0, v0x23ab8d0_0, v0x23ab990_0;
+S_0x237c510 .scope module, "A" "adder" 3 37, 6 3, S_0x237c840;
+ .timescale -9 -12;
+v0x23812e0_0 .net *"_s10", 0 0, C4<0>; 1 drivers
+v0x23aaeb0_0 .net *"_s11", 7 0, L_0x23ae4c0; 1 drivers
+v0x23aaf50_0 .net *"_s13", 7 0, L_0x23ae600; 1 drivers
+v0x23aaff0_0 .net *"_s16", 6 0, C4<0000000>; 1 drivers
+v0x23ab0a0_0 .net *"_s17", 7 0, L_0x23ae770; 1 drivers
+v0x23ab140_0 .net *"_s3", 7 0, L_0x23ae2a0; 1 drivers
+v0x23ab220_0 .net *"_s6", 0 0, C4<0>; 1 drivers
+v0x23ab2c0_0 .net *"_s7", 7 0, L_0x23ae390; 1 drivers
+v0x23ab3b0_0 .alias "a", 6 0, v0x23ad3e0_0;
+v0x23ab450_0 .alias "b", 6 0, v0x23ad4e0_0;
+v0x23ab550_0 .alias "cin", 0 0, v0x23accc0_0;
+v0x23ab5f0_0 .alias "cout", 0 0, v0x23acdf0_0;
+v0x23ab700_0 .net "sum", 6 0, L_0x23ae1b0; 1 drivers
+L_0x23ae0c0 .part L_0x23ae770, 7, 1;
+L_0x23ae1b0 .part L_0x23ae770, 0, 7;
+L_0x23ae2a0 .concat [ 7 1 0 0], v0x23abe30_0, C4<0>;
+L_0x23ae390 .concat [ 7 1 0 0], v0x23aba30_0, C4<0>;
+L_0x23ae4c0 .arith/sum 8, L_0x23ae2a0, L_0x23ae390;
+L_0x23ae600 .concat [ 1 7 0 0], L_0x23ab4d0, C4<0000000>;
+L_0x23ae770 .arith/sum 8, L_0x23ae4c0, L_0x23ae600;
+    .scope S_0x23ac730;
+T_0 ;
+    %wait E_0x23ac820;
+    %load/v 8, v0x23ac8f0_0, 7;
+    %load/v 15, v0x23ac850_0, 7;
+    %cmp/u 8, 15, 7;
+    %jmp/0xz  T_0.0, 5;
+    %set/v v0x23ac970_0, 0, 1;
+    %jmp T_0.1;
+T_0.0 ;
+    %set/v v0x23ac970_0, 1, 1;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x23ac3a0;
+T_1 ;
+    %wait E_0x23ac490;
+    %load/v 8, v0x23ac6b0_0, 1;
+    %mov 9, 0, 1;
+    %cmpi/u 8, 0, 2;
+    %jmp/0xz  T_1.0, 4;
+    %load/v 8, v0x23ac4c0_0, 7;
+    %set/v v0x23ac610_0, 8, 7;
+    %jmp T_1.1;
+T_1.0 ;
+    %load/v 8, v0x23ac540_0, 7;
+    %set/v v0x23ac610_0, 8, 7;
+T_1.1 ;
+    %jmp T_1;
+    .thread T_1, $push;
+    .scope S_0x23abfc0;
+T_2 ;
+    %wait E_0x23ac0b0;
+    %load/v 8, v0x23ac2f0_0, 1;
+    %mov 9, 0, 1;
+    %cmpi/u 8, 0, 2;
+    %jmp/0xz  T_2.0, 4;
+    %load/v 8, v0x23ac0e0_0, 7;
+    %set/v v0x23ac240_0, 8, 7;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/v 8, v0x23ac190_0, 7;
+    %set/v v0x23ac240_0, 8, 7;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2, $push;
+    .scope S_0x23abb90;
+T_3 ;
+    %wait E_0x23abc80;
+    %load/v 8, v0x23abee0_0, 1;
+    %mov 9, 0, 1;
+    %cmpi/u 8, 0, 2;
+    %jmp/0xz  T_3.0, 4;
+    %load/v 8, v0x23abcd0_0, 7;
+    %set/v v0x23abe30_0, 8, 7;
+    %jmp T_3.1;
+T_3.0 ;
+    %load/v 8, v0x23abd90_0, 7;
+    %set/v v0x23abe30_0, 8, 7;
+T_3.1 ;
+    %jmp T_3;
+    .thread T_3, $push;
+    .scope S_0x23ab7a0;
+T_4 ;
+    %wait E_0x23ab070;
+    %load/v 8, v0x23abae0_0, 1;
+    %mov 9, 0, 1;
+    %cmpi/u 8, 0, 2;
+    %jmp/0xz  T_4.0, 4;
+    %load/v 8, v0x23ab8d0_0, 7;
+    %set/v v0x23aba30_0, 8, 7;
+    %jmp T_4.1;
+T_4.0 ;
+    %load/v 8, v0x23ab990_0, 7;
+    %set/v v0x23aba30_0, 8, 7;
+T_4.1 ;
+    %jmp T_4;
+    .thread T_4, $push;
+    .scope S_0x237ca50;
+T_5 ;
+    %set/v v0x23ad790_0, 0, 8;
+    %set/v v0x23ad960_0, 0, 8;
+    %delay 100000, 0;
+    %movi 8, 134, 8;
+    %set/v v0x23ad790_0, 8, 8;
+    %movi 8, 131, 8;
+    %set/v v0x23ad960_0, 8, 8;
+    %delay 100000, 0;
+    %movi 8, 150, 8;
+    %set/v v0x23ad790_0, 8, 8;
+    %movi 8, 135, 8;
+    %set/v v0x23ad960_0, 8, 8;
+    %delay 100000, 0;
+    %end;
+    .thread T_5;
+# The file index is used to find the file name in the following table.
+:file_names 7;
+    "N/A";
+    "<interactive>";
+    "sign_mag_adder_tb.v";
+    "sign_mag_adder.v";
+    "./comparator.v";
+    "./mux.v";
+    "./adder.v";
